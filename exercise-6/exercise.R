@@ -47,7 +47,7 @@ MostYardsScore <- function(games) {
   passing <- games$passing_yards[combined.yards == max(combined.yards)]
   rushing <- games$rushing_yards[combined.yards == max(combined.yards)]
   fumbles <- games$fumbles[combined.yards == max(combined.yards)]
-  return(paste("UW's game that had the most rushing hards in it this season was against", opponent, 
+  return(paste("UW's game that had the most rushing yards in this season was against", opponent, 
               ".In the game, UW scored", husky.points, "and", opponent, "scored", opponent.points, 
               ". UW passed for", passing, "yards and ran for", rushing, 
               "yards. The game was played on", date, "and there were a total of", fumbles, "fumbles."))
