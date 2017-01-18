@@ -7,7 +7,6 @@ husky.games.2015 <- read.csv("data/huskies_2015.csv", stringsAsFactors = FALSE)
 opponents <- husky.games.2015$opponent
 
 
-
 # Create a vector of the their final scores for the games
 # Call this variable `husky.scores`
 husky.score <- husky.games.2015$uw_score
