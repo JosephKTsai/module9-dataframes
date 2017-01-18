@@ -53,6 +53,5 @@ average.salary.increase <- mean(salaries$raise)
 write.csv(salaries, "salaries.csv")
 
 # For people who did not get a raise, how much money did they lose?
-############ ASK IMAN
 average.money.lost.among.paycuts <- mean(salaries$raise[salaries$got.raise != TRUE])
 print(average.money.lost.among.paycuts)
