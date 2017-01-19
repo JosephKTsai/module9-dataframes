@@ -27,10 +27,10 @@ salaries$got.raise <- salaries.2015 > salaries.2014
 ### cell rather than the whole row!)
 
 # What was the 2015 salary of employee 57
-employ.sal.57 <- salaries[, salaries$employees == "employee 57"]
+employ.sal.57 <- salaries$salaries.2015[salaries$employees == "Employee 57"]
 
 # How many employees got a raise?
-num.employ.raise <- nrow(salaries[salaries$got.raise, ])
+num.employ.raise <- nrow(salaries[salaries$got.raise == TRUE, ])
 
 # What was the value of the highest raise?
 highest.raise <- max(salaries$raise)
@@ -55,3 +55,4 @@ write.csv(salaries, "salaries.csv")
 # For people who did not get a raise, how much money did they lose?
 average.money.lost.among.paycuts <- mean(salaries$raise[salaries$got.raise != TRUE])
 print(average.money.lost.among.paycuts)
+

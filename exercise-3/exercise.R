@@ -7,7 +7,6 @@ data(USPersonalExpenditure)
 # Test this using the `is.data.frame()` function
 is.data.frame(USPersonalExpenditure)
 
-
 # Luckily, you can simply pass the USPersonalExpenditure variable as an argument
 # to the `data.frame()` function to convert it a data farm. Do this, storing the
 # result in a new variable
@@ -16,14 +15,12 @@ us.exp <- data.frame(USPersonalExpenditure)
 # What are the column names of your dataframe?
 colnames(us.exp)
 
-
 # Why are they so strange? Think about whether you could use a number like 1940
 # with dollar notation!
 # Answer: Probably the years associated with the expenses
 
 # What are the row names of your dataframe?
 rownames(us.exp)
-
 
 # Create a column "category" that is equal to your rownames
 us.exp$category <- rownames(us.exp)
@@ -43,19 +40,12 @@ max.exp <- us.exp$category[max(us.exp$X1960) == us.exp$X1960]
 
 # Define a function `DetectHighest` that takes in a year as a parameter, and
 # returns the highest spending category of that year
-
-###### What kind of error am I getting here?
-#DetectHighest <- function(year) {
-#  formatted.year <- paste0("X",year)
-#  return(us.exp$category[max(us.exp$formatted.year) == us.exp$formatted.year])
-#}
 DetectHighest <- function(year) {
   # need to format it correctly so that we'll get the right columns
   formatted.year <- paste0("X",year)
   # Check every row in that column, and return the matching index to the corresponding category
   return(us.exp$category[max(us.exp[, formatted.year]) == us.exp[, formatted.year]])
 }
-
 
 # Using your function, determine the highest spending category of each year
 highest.exp.each.year <- c(DetectHighest(1940), DetectHighest(1945), DetectHighest(1950),
